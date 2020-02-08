@@ -1,0 +1,12 @@
+<div class="row">
+<h3 *ngIf="newCheatsheet">{{newCheatsheet.name}} {{newCheatsheet.type}}</h3>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let player of players">
+    <mat-expansion-panel-header>
+      {{player.firstName}} {{player.lastName}} | {{player.position}}
+    </mat-expansion-panel-header>
+    {{player.ranking}} - {{player.team}}
+  </mat-expansion-panel>
+</mat-accordion>
+<button style="margin:10px" mat-raised-button color="accent" (click)="saveCheatsheet()" >Save Cheatsheet</button>
+</div>

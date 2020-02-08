@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cheatsheet } from './cheatsheet/cheatsheet.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fantasycheatsheet';
+  newCheatsheet: Cheatsheet = {type : '', count : 0, name : '', rankings: []}
+
+  onNewCheatsheet(cheatsheet) {
+    console.log(cheatsheet);
+    this.newCheatsheet = cheatsheet;
+  }
 }

@@ -1,0 +1,29 @@
+<div class="row">
+  <mat-card>
+    <form (submit)="createCheatsheet(cheatsheetForm)" #cheatsheetForm="ngForm">
+      <mat-form-field>
+        <input matInput type="text" name="cheatsheetName" placeholder="Cheatsheet Name" ngModel #name=ngModel required/>
+        <mat-error *ngIf="name.invalid">gotta enter a name</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select matInput ngModel #type=ngModel name="typeField" required>
+          <mat-option value="Standard">Standard</mat-option>
+          <mat-option value="PPR">PPR</mat-option>
+          <mat-option value="Keeper">Keeper</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select matInput ngModel name="playerField" required>
+          <mat-option value="100">100</mat-option>
+          <mat-option value="150">150</mat-option>
+          <mat-option value="200">200</mat-option>
+          <mat-option value="250">250</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="warn" type="submit">Create Cheatsheet</button>
+    </form>
+  </mat-card>
+</div>
